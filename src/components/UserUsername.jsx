@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
+import React from "react";
 function UserUsername(props) {
   return (
-    <div>
+    <React.Fragment>
       <b>
         Username: <span>{props.username}</span>
       </b>
-    </div>
+      <br />
+    </React.Fragment>
   );
 }
 UserUsername.proptypes = {

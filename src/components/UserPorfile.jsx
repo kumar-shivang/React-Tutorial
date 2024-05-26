@@ -1,14 +1,19 @@
 import UserFavoriteFood from "./UserFavoriteFood";
 import UserUsername from "./UserUsername";
-function UserProfile() {
+import Proptypes from "prop-types";
+function UserProfile(props) {
   return (
-    <div>
-      <UserUsername username={123} />
-      <span>Email</span>
-      <span>Bob@bob.bob</span>
+    <>
+      {/* INFO: passing props to childern components is called prop drilling */}
+      <UserUsername username={props.username} />
+      <span>{props.email}</span>
       <UserFavoriteFood />
-    </div>
+    </>
   );
 }
 
+UserProfile.proptypes = {
+  username: Proptypes.string.isRequired,
+  email: Proptypes.string.isRequired,
+};
 export default UserProfile;
