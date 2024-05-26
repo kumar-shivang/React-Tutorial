@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
+import "./styles.css";
 function UserUsername(props) {
   return (
     <React.Fragment>
-      <b>
+      <b className="username">
         Username: <span>{props.username}</span>
       </b>
       <br />
