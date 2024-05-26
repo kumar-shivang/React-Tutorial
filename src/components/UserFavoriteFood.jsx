@@ -1,4 +1,5 @@
 import { createElement } from "react";
+import styles from "./styles.module.scss";
 export default function UserFavoriteFood() {
   return createElement(
     "section",
@@ -9,8 +10,9 @@ export default function UserFavoriteFood() {
       style={{
         listStyle: "none",
         border: "1px solid black",
-        color: "red",
       }}
+      // INFO: This class/styling is added using SASS
+      className={styles.food}
     >
       <li>Food</li>
       <li>Food</li>
