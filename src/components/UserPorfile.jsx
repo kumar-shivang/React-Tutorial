@@ -1,11 +1,14 @@
 import UserFavoriteFood from "./UserFavoriteFood";
-export default function UserProfile() {
+import UserUsername from "./UserUsername";
+function UserProfile() {
   return (
     <div>
-      <p>Username: Bob</p>
+      <UserUsername username={123} />
       <span>Email</span>
       <span>Bob@bob.bob</span>
       <UserFavoriteFood />
     </div>
   );
 }
+
+export default UserProfile;
