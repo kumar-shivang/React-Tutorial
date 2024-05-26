@@ -1,15 +1,21 @@
 import PropTypes from "prop-types";
-export default function UserUsername(props) {
+import React from "react";
+import "./styles.css";
+function UserUsername(props) {
   return (
-    <>
-      <b>
-        Username : <span>{props.username}</span>
+    <React.Fragment>
+      <b className="username">
+        Username: <span>{props.username}</span>
       </b>
       <br />
-    </>
+    </React.Fragment>
   );
 }
-
 UserUsername.proptypes = {
-  username: PropTypes.instanceOf(String).isRequired,
+  username: PropTypes.string.isRequired,
+
+  // NOTE: Proptype violaton is not caught by the compiler right now,
+  // I will fix this in the next commit
 };
+
+export default UserUsername;
