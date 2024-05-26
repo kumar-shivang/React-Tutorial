@@ -1,12 +1,12 @@
+import LoginForm from "./components/LoginForm";
 export default function App() {
-  let isBlue = false;
-  return isBlue ? (
-    <div style={{ color: "blue" }}>
-      <h1>Hello World</h1>
-    </div>
-  ) : (
-    <div style={{ color: "red" }}>
-      <h1>Hello World</h1>
-    </div>
+  window.addEventListener("resize", (e) => {
+    console.log(e.target.innerWidth);
+  });
+  return (
+    <>
+      <h1>Login</h1>
+      <LoginForm />
+    </>
   );
 }
