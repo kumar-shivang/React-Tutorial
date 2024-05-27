@@ -1,12 +1,11 @@
-import LoginForm from "./components/LoginForm";
+import RegistrationForm from "./components/RegistratonForm";
+import { useState } from "react";
+
 export default function App() {
-  window.addEventListener("resize", (e) => {
-    console.log(e.target.innerWidth);
-  });
   return (
     <>
-      <h1>Login</h1>
-      <LoginForm />
+      <h1>React Components</h1>
+      <RegistrationForm />
     </>
   );
 }
