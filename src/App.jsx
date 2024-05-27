@@ -1,5 +1,4 @@
-import RegistrationForm from "./components/RegistratonForm";
-import { useState } from "react";
+import RegistrationForm from "./components/RegistrationForm.jsx";
 
 export default function App() {
   return (
