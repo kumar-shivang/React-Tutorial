@@ -3,7 +3,7 @@ export default function UserUsername(props) {
   return (
     <>
       <b>
-        Username : <span>{props.username}</span>
+        <span>{props.username}</span>
       </b>
       <br />
     </>

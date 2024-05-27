@@ -1,13 +1,16 @@
 import "./RegistrationForm.css";
 import { useState } from "react";
-export default function RegistrationForm() {
+export default function RegistrationForm({ setUsers }) {
   const [formFields, setFormFields] = useState({
     username: "",
     email: "",
-    password: "",
   });
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <label htmlFor="username">Username</label>
       <input
         type="text"
@@ -33,21 +36,22 @@ export default function RegistrationForm() {
           })
         }
       />
-      <br />
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        value={formFields.password}
-        onChange={(e) =>
-          setFormFields((currentState) => {
-            return { ...currentState, password: e.target.value };
-          })
-        }
-      />
-      <br />
-      <button type="submit">Register</button>
+      <button
+        onClick={() => {
+          setUsers((currentState) => {
+            return [
+              ...currentState,
+              {
+                id: currentState.length + 1,
+                username: formFields.username,
+                email: formFields.email,
+              },
+            ];
+          });
+        }}
+      >
+        Register
+      </button>
     </form>
   );
 }
