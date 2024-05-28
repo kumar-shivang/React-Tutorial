@@ -1,27 +1,16 @@
-import UserProfile from "./components/UserPorfile";
-import RegistrationForm from "./components/RegistrationForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function App() {
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      username: "johndoe",
-      email: "johndoe@email.com",
-    },
-    {
-      id: 2,
-      username: "jennydoe",
-      email: "jennydoe@email.com",
-    },
-  ]);
-
+  const [counter, setCounter] = useState(0);
+  const [sync, setSync] = useState(false);
+  useEffect(() => {
+    console.log("useEffect called");
+    document.title = `Counter: ${counter}`;
+  }, [sync]);
   return (
     <>
-      {users.map((user) => {
-        return <UserProfile key={user.id} user={user} setUsers={setUsers} />;
-      })}
-
-      <RegistrationForm setUsers={setUsers} />
+      <h1>Counter: {counter}</h1>
+      <button onClick={() => setCounter(counter + 1)}>Increment</button>
+      <button onClick={() => setSync((current) => !current)}>Sync</button>
     </>
   );
 }
