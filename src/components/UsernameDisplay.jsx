@@ -2,7 +2,7 @@ export function UsernameDisplay({ username }) {
   return (
     <>
       <b>
-        <span>{username}</span>
+        <h1>{username}</h1>
       </b>
       <br />
     </>
