@@ -1,21 +1,16 @@
 import { useState } from "react";
-import useDocumentClick from "./utils/hooks/useDocumentClick";
-import ToggleElement from "./components/ToggleElement";
+import UserProfile from "./components/UserProfile";
 export default function App() {
-  const [toggle, setToggle] = useState(true);
-  useDocumentClick(() => {
-    console.log("Document clicked");
-  });
+  const [userId, setUserId] = useState(1);
   return (
     <div>
-      {toggle && <ToggleElement />}
-      <button
-        onClick={() => {
-          setToggle(!toggle);
-        }}
-      >
-        Toggle
-      </button>
+      <input
+        type="number"
+        max={10}
+        min={1}
+        onChange={(e) => setUserId(e.target.value)}
+      />
+      <UserProfile userId={userId} />
     </div>
   );
 }
